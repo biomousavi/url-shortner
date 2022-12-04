@@ -49,7 +49,8 @@ router.post('/:path', async (request: Request, env: Env) => {
 })
 
 
-router.get('/:path', async (request: Request, env: Env, ctx: ExecutionContext) => {
+// Handle redirects
+router.get('/:path', async (request: Request, env: Env) => {
 
 	try {
 
@@ -76,11 +77,12 @@ router.get('/:path', async (request: Request, env: Env, ctx: ExecutionContext) =
 
 
 
-
+// catch other requests
 router.all('*', () => new Response('Not Found.', { status: 404 }))
 
 
 
+// Handle unknown errors
 function errorHandler() {
 	return new Response('Internal Server Error', { status: 500 })
 }
