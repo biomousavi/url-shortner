@@ -1,3 +1,8 @@
-name = "telegram-url-shortner"
+name = "shortner"
 main = "src/index.ts"
 compatibility_date = "2022-12-04"
+vars = {}
+
+kv_namespaces = [
+  { binding = "DB", id = "77bed074928e413f8d59b0d7d5578b20" }
+]

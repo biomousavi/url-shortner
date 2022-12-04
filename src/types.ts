@@ -1,15 +1,15 @@
-import { Route } from "itty-router"
+import { Request, Route } from "itty-router"
 
-export type MethodType = 'GET' | 'POST' 
-
-export interface Request {
-  method: MethodType 
-  url: string
-  optional?: string
-}
-
+export type MethodType = 'GET' | 'POST'
 
 export interface Methods {
   get: Route
   post: Route
+}
+
+
+export interface TResponse {
+  method?: 'sendMessage'
+  text?: string
+  chat_id?: number
 }
